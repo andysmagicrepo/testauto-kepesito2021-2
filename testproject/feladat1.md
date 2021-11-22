@@ -1,4 +1,4 @@
-## 1 Feladat: Pitagorasz-tétel
+## 1 Feladat: Haromszög kerülete
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
