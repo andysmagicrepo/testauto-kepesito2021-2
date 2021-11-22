@@ -2,26 +2,29 @@
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Pitagorasz-tétel app-ot az [https://ambitious-sky-0d3acbd03.azurestaticapps.net/k1.html](https://ambitious-sky-0d3acbd03.azurestaticapps.net/k1.html) oldalról. 
+A program töltse be a Háromszög kerülete app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k1](https://agreeable-beach-0514a6003.azurestaticapps.net/k1) oldalról. 
 
-Feladatod, hogy automatizáld selenium webdriverrel az alábbi funkcionalitásokat a Pitagorasz-tétel appban:
+Feladatod, hogy automatizáld selenium webdriverrel az alábbi funkcionalitásokat a Háromszög kerülete appban:
 
 Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 
 * Helyesen jelenik meg az applikáció betöltéskor:
     * a: <üres>
     * b: <üres>
-    * c: <nem látszik>
+    * c: <üres>
+    * kerület: <nem látszik>
 
 * Számítás helyes, megfelelő bemenettel
     * a: 2
     * b: 3
     * c: 10
+    * kerület: 15
 
 * Üres kitöltés:
     * a: <üres>
     * b: <üres>
-    * c: NaN   
+    * c: <üres>
+    * kerület: NaN   
 
 ### A megoldás beadása
 * a megoldásokat a `testproject` mappába tedd, `k1.py`

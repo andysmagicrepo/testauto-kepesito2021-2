@@ -1,26 +1,23 @@
-## 2 Feladat: Színes reakció
+## 2 Feladat: Matek app
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Színes reakció app-ot az [https://ambitious-sky-0d3acbd03.azurestaticapps.net/k2.html](https://ambitious-sky-0d3acbd03.azurestaticapps.net/k2.html) oldalról.
+A program töltse be a Matek app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k2](https://agreeable-beach-0514a6003.azurestaticapps.net/k2) oldalról.
 
-Feladatod, hogy automatizáld selenium webdriverrel a Színes reakció app tesztelését.
+Feladatod, hogy automatizáld selenium webdriverrel a Matek app tesztelését. Az applikáció minden frissítésnél véletlenszerűen változik!
 
 Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 
 Az alábbi teszteseteket kell lefedned:
 
-* Helyesen jelenik meg az applikáció betöltéskor:
-    * Alapból egy random kiválasztott szín jelenik meg az `==` bal oldalanán. A jobb oldalon csak a `[  ]` szimbólum látszik.
-    <szín neve> [     ] == [     ]
+A feladatod, hogy a random számokkal működő matematikai applikációt ellenőrizd. A teszted ki kell, hogy olvassa a három operandust (számot) és a két operátort (műveleti jelet). Ennek megfelelően kell elvégezned a kalkulációt Pythonban. 
 
-* El lehet indítani a játékot a `start` gommbal.
-    * Ha elindult a játék akkor a `stop` gombbal le lehet állítani.
+* Teszteld le, hogy helyesen jelenik-e meg az applikáció:
+    * Egy matematikai képletet látsz aminek a jobb oldalán egy kérdőjellel jelöltül a keresett eredményt, pl 3866-5434*160 = ?
+    * A kalkuláció gomb megtalálható és megnyomható.
+    * A megoldás üres kezdetben: Eredmény: <üres érték>
+* Ellenőrizd, hogy jól működik-e a kalkulátor?
 
-* Eltaláltam, vagy nem találtam el.
-    * Ha leállítom a játékot két helyes működés van, ha akkor állítom épp le 
-    amikor a bal és a jobb oldal ugyan azt a színt tartalmazza akkor a `Correct!` felirat jelenik meg.
-      ha akkor amikor eltérő szín van a jobb és bal oldalon akkor az `Incorrect!` felirat kell megjelenjen.
 
 ### A megoldás beadása
 * a megoldásokat a `testproject` mappába tedd, `k2.py`

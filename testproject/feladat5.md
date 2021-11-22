@@ -2,7 +2,7 @@
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Bingo app-ot az [https://ambitious-sky-0d3acbd03.azurestaticapps.net/k5.html](https://ambitious-sky-0d3acbd03.azurestaticapps.net/k5.html) oldalról.
+A program töltse be a Bingo app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k5](https://agreeable-beach-0514a6003.azurestaticapps.net/k5) oldalról.
 
 Feladatod, hogy automatizáld selenium webdriverrel a Bingoapp tesztelését.
 

@@ -1,8 +1,8 @@
 # Struktúraváltó képzés
 ## Junior Automata Tesztelő szak
-### Képesítő vizsga - 2021.09.06.
+### Képesítő vizsga - 2021.12.01.
 
-Üdvözöllek a képesítő vizsga gyakorlati részén.
+Üdvözöllek a képesítő pótvizsga gyakorlati részén.
 
 ### A vizsgáról
 * 5 részfeladatból áll, az egyes feladat leírásokat a `testproject` mappában találod

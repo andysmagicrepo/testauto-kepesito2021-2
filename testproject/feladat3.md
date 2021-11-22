@@ -1,26 +1,27 @@
-## 3 Feladat: Alfanumerikus mező
+## 3 Feladat: Nagybetűs városnév mező
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Alfanumerikus mezőapp-ot az [https://ambitious-sky-0d3acbd03.azurestaticapps.net/k3.html](https://ambitious-sky-0d3acbd03.azurestaticapps.net/k3.html) oldalról.
+A program töltse be a Nagybetűs város appot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k3](https://agreeable-beach-0514a6003.azurestaticapps.net/k3) oldalról.
 
-Feladatod, hogy automatizáld selenium webdriverrel a Alfanumerikus mező app tesztelését.
+Feladatod, hogy automatizáld selenium webdriverrel a Nagybetűs város app tesztelését.
+
+Az applikáció minden frissítésnél véletlenszerűen változik!
+
+Feladatod, hogy megtaláld azt a városnevet, ami **csupa nagyvetűvel** van írva és kitöltsd a form-ban a mezőt és ellnörizd le, hogy eltaláltad-e.
 
 Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 
-A cél a mező validáció tesztelése:
-
-* Helyes kitöltés esete:
-    * title: abcd1234
-    * Nincs validációs hibazüzenet
-
-* Illegális karakterek esete:
-    * title: teszt233@
-    * Only a-z and 0-9 characters allewed.
-
-* Tul rövid bemenet esete:
-    * title: abcd
-    * Title should be at least 8 characters; you entered 4.
+Az alábbi teszteseteket mindenkép fedd le:
+* Helyesen jelenik meg az applikáció:
+    * a városnév input mező üres
+    * az Ellenőrzés gomb látható és engedélyezve van
+    * Az 'Eredmény:' feladat nem látható
+* Ellenőrizd a helye működést:
+    * Keressd meg és írd be a random nagybetűs városnevet
+    * Ellenőrizd, hogy elfogadja-e az applikáció helyes megfejtésnek
+* Ellenőrizd a hibás esetet:
+    * Ha rossz városnevet adunk meg akkor nem szabad, hogy elfogadja a megfejtést az applikáció
 
 ### A megoldás beadása
 * a megoldásokat a `testproject` mappába tedd, `k3.py`

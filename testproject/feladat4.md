@@ -1,32 +1,29 @@
-## 4 Feladat: Műveletek karakterekkel
+## 4 Feladat: Password validation
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Műveletek karakterekkel app-ot az [https://ambitious-sky-0d3acbd03.azurestaticapps.net/k4.html](https://ambitious-sky-0d3acbd03.azurestaticapps.net/k4.html) oldalról.
+A program töltse be a Password validation app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k4](https://agreeable-beach-0514a6003.azurestaticapps.net/k4) oldalról.
 
-Feladatod, hogy automatizáld selenium webdriverrel a Műveletek karakterekkel app tesztelését.
-
-Az applikáció minden frissítésnél véletlenszerűen változik!
+Feladatod, hogy automatizáld selenium webdriverrel a Password validation app tesztelését.
 
 Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 
 Az alábbi teszt eseteket kell kidolgozzad:
 
-* Helyesen betöltődik az applikáció:
-    * Megjelenik az ABCs műveleti tábla, pontosan ezzel a szöveggel:
-      * !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
-    
-* Megjelenik egy érvényes művelet:
-    * `chr` megző egy a fenti ABCs műveleti táblából származó karaktert tartalmaz
-    * `op` mező vagy + vagy - karaktert tartlamaz
-    * `num` mező egy egész számot tartalamaz
-    
-* Gombnyomásra helyesen végződik el a random művelet a fenti ABCs tábla alapján:
-    * A megjelenő `chr` mezőben lévő karaktert kikeresve a táblában
-    * Ha a `+` művelet jelenik meg akkor balra lépve ha a `-` akkor jobbra lépve
-    * A `num` mezőben megjelenő mennyiségű karaktert
-    * az `result` mező helyes karaktert fog mutatni
+* Helyesen jelenik meg az applikáció:
+    * Megjelennek a username illetve password mezők, de üres a tartalmuk
+    * Van submit gomb
+    * Nincs hiba a képernyőn
 
+* Helyes kitöltés - nincs hiba:
+    * username: kisstamas
+    * password: Abcd123!
+    * Minden kategóriában pozitív a jelszó ellenőrzés kimenete
+    
+* Helytelen kitöltés - 4 hiba
+    * username: kisstamas
+    * password: !
+    * Minden kategóriában negatív a jelszó ellenőrzés kimenete
 
 
 ### A megoldás beadása
