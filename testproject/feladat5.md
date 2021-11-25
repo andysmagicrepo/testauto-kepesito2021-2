@@ -1,27 +1,25 @@
-## 5 Feladat: Bingo
+## 5 Feladat: Large Tic Tac Toe
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
-A program töltse be a Bingo app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k5](https://agreeable-beach-0514a6003.azurestaticapps.net/k5) oldalról.
+A program töltse be a Large Tic Tac Toe app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k5](https://agreeable-beach-0514a6003.azurestaticapps.net/k5) oldalról.
 
-Feladatod, hogy automatizáld selenium webdriverrel a Bingoapp tesztelését.
-
-Az applikáció indulo bingo táblája minden frissítésnél véletlenszerűen változik!
+Feladatod, hogy automatizáld selenium webdriverrel a Large Tic Tac Toe app tesztelését.
 
 Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 
 A feladatod az alábbi tesztesetek lefejlesztése:
 * Az applikáció helyesen megjelenik:
-    * A bingo tábla 25 darab cellát tartalmaz
-    * A számlista 75 számot tartalmaz
+    * A Tic Tac Toe tabla 12 x 12 meretu (144 cellat tartalmaz)
+    * Minden cell ?-et tartalmaz
     
-* Bingo számok ellenőzrzése:
-    * Addig nyomjuk a `play` gobot amíg az első bingo felirat meg nem jelenik
-    * Ellenőrizzük, hogy a bingo sorában vagy oszlopában lévő számok a szelvényről tényleg a már kihúzott számok közül kerültek-e ki
+* Alap játékszabályok ellenőrzése:
+    * Az első játékos (első gombnyomás) megnyom egy cellát, ami ezután X karaktert kell, hogy tartalmazzon
+    * A második játékos (második gombnyomás) megnyom egy cellát, ami ezután 0 karaktert kell, hogy tartalmazzon
     
-* Új játékot tudunk indítani
-    * az init gomb megnyomásával a felület visszatér a kiindulási értékekhez
-    * új bingo szelvényt kapunk más számokkal.
+* Győztes
+    * Ellenőrizzük az "öt ugyanolyan győz" szabályt vizszintesen
+    * Ellenőrizzük az "öt ugyanolyan győz" szabályt függőlegesen
 
 
 ### A megoldás beadása
