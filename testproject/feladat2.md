@@ -16,7 +16,10 @@ A feladatod, hogy a random számokkal működő matematikai applikációt ellen�
     * Egy matematikai képletet látsz aminek a jobb oldalán egy kérdőjellel jelöltül a keresett eredményt, pl 3866-5434*160 = ?
     * A kalkuláció gomb megtalálható és megnyomható.
     * A megoldás üres kezdetben: Eredmény: <üres érték>
+
 * Ellenőrizd, hogy jól működik-e a kalkulátor?
+
+* Ellenőrizd, hogy akárhányszor megnyomható-e a kalkuláció gomb análékül, hogy ez elrontana bármit is.
 
 
 ### A megoldás beadása

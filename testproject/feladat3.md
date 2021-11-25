@@ -1,4 +1,4 @@
-## 3 Feladat: Nagybetűs városnév mező
+## 3 Feladat: Nagybetűs város
 
 Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ. 
 
