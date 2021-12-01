@@ -52,31 +52,62 @@ driver.get(URL)
 time.sleep(2)
 
 # kiemelés elements
+a_mezo = driver.find_element_by_id("a")
+b_mezo = driver.find_element_by_id("b")
+c_mezo = driver.find_element_by_id("c")
+kalkulacio_gomb = driver.find_element_by_id("submit")
+eredmeny = driver.find_element_by_id("result")
 
 # kiemelés tesztadat
-#test_data = []
-#test_results = []
+a_ertekek = ["", "2", ""]
+b_ertekek = ["", "3", ""]
+c_ertekek = ["", "10", ""]
+elvart_eredmenyek = ["", "15", "NaN"]
 
-def clear_and_fill_input(element, text):
-    pass
-    # element.clear()
-    # element.send_keys(text)
+
+def kuld_es_szamol(a, b, c, kerulet):
+    a_mezo.clear()
+    b_mezo.clear()
+    c_mezo.clear()
+    a_mezo.send_keys(a)
+    b_mezo.send_keys(b)
+    c_mezo.send_keys(c)
+    kalkulacio_gomb.click()
+    #eredmeny = driver.find_element_by_id("result")
+    assert eredmeny.text == kerulet
+    print(eredmeny)
 
 # TC1-helyes kitöltés
-#def test_proper_card_deck():
+# Helyesen jelenik meg az applikáció betöltéskor:
+#     * a: <üres>
+#     * b: <üres>
+#     * c: <üres>
+#     * kerület: <nem látszik>
 def test_tc1():
-    pass
+    # assert a_mezo == ""
+    # assert b_mezo == ""
+    # assert c_mezo == ""
+    #assert not eredmeny.is_displayed()
+    kuld_es_szamol(a_ertekek[0], b_ertekek[0], c_ertekek[0], elvart_eredmenyek[0])
+    time.sleep(1)
 
 # TC2-helytelen kitöltés
-#def test_initial_submit_enabled():
+# * Számítás helyes, megfelelő bemenettel
+#     * a: 2
+#     * b: 3
+#     * c: 10
+#     * kerület: 15
 def test_tc2():
-    driver.get(URL)     # weblap alaphelyzetet eredményez
-    pass
+    kuld_es_szamol(a_ertekek[1], b_ertekek[1], c_ertekek[1], elvart_eredmenyek[1])
 
 # TC3-helytelen kitöltés
-#def test_initial_card_list_empty():
+# * Üres kitöltés:
+#     * a: <üres>
+#     * b: <üres>
+#     * c: <üres>
+#     * kerület: NaN
 def test_tc3():
-    pass
+    kuld_es_szamol(a_ertekek[2], b_ertekek[2], c_ertekek[2], elvart_eredmenyek[2])
 
 test_tc1()
 test_tc2()

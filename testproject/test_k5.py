@@ -48,6 +48,8 @@ driver.get(URL)
 time.sleep(2)
 
 # kiemelés elements
+cella_lista = driver.find_elements_by_class_name('title')
+
 
 # kiemelés tesztadat
 #test_data = []
@@ -59,18 +61,32 @@ def clear_and_fill_input(element, text):
     # element.send_keys(text)
 
 # TC1-helyes kitöltés
-#def test_proper_card_deck():
+# * Az applikáció helyesen megjelenik:
+#     * A Tic Tac Toe tabla 12 x 12 meretu (144 cellat tartalmaz)
+#     * Minden cell ?-et tartalmaz
 def test_tc1():
-    pass
+    cella_hossz = len(cella_lista)
+    assert cella_hossz == 144
+    a = 0
+    for b in cella_hossz:
+        if cella_lista[b] =='?':
+            a += 1
+    assert a == 144
+
+
 
 # TC2-helytelen kitöltés
-#def test_initial_submit_enabled():
+# * Alap játékszabályok ellenőrzése:
+#     * Az első játékos (első gombnyomás) megnyom egy cellát, ami ezután X karaktert kell, hogy tartalmazzon
+#     * A második játékos (második gombnyomás) megnyom egy cellát, ami ezután 0 karaktert kell, hogy tartalmazzon
 def test_tc2():
     driver.get(URL)     # weblap alaphelyzetet eredményez
     pass
 
 # TC3-helytelen kitöltés
-#def test_initial_card_list_empty():
+# * Győztes
+#     * Ellenőrizzük az "öt ugyanolyan győz" szabályt vizszintesen
+#     * Ellenőrizzük az "öt ugyanolyan győz" szabályt függőlegesen
 def test_tc3():
     pass
 

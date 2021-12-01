@@ -47,6 +47,11 @@ driver.get(URL)
 time.sleep(2)
 
 # kiemelés elements
+varos_nev_input = driver.find_element_by_id('allcapsName')
+Ellenőrzés_gomb = driver.find_element_by_id('submit')
+Eredmeny_szoveg =
+Eredmény_lista = driver.find_elements_by_id('randomNames')
+#Eredmény_lista = driver.find_elements_by_xpath('//ul/li(contains[@marker, ')
 
 # kiemelés tesztadat
 #test_data = []

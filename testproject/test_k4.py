@@ -51,6 +51,9 @@ driver.get(URL)
 time.sleep(2)
 
 # kiemelés elements
+usrname = driver.find_element_by_id('usrname')
+pswd = driver.find_element_by_id('psw')
+submit = driver.find_element_by_xpath(//input[@type='submit'])
 
 # kiemelés tesztadat
 #test_data = []
@@ -62,18 +65,27 @@ def clear_and_fill_input(element, text):
     # element.send_keys(text)
 
 # TC1-helyes kitöltés
-#def test_proper_card_deck():
+# * Helyesen jelenik meg az applikáció:
+#     * Megjelennek a username illetve password mezők, de üres a tartalmuk
+#     * Van submit gomb
+#     * Nincs hiba a képernyőn
 def test_tc1():
     pass
 
 # TC2-helytelen kitöltés
-#def test_initial_submit_enabled():
+# * Helyes kitöltés - nincs hiba:
+#     * username: kisstamas
+#     * password: Abcd123!
+#     * Minden kategóriában pozitív a jelszó ellenőrzés kimenete
 def test_tc2():
     driver.get(URL)     # weblap alaphelyzetet eredményez
     pass
 
 # TC3-helytelen kitöltés
-#def test_initial_card_list_empty():
+# * Helytelen kitöltés - 4 hiba
+#     * username: kisstamas
+#     * password: !
+#     * Minden kategóriában negatív a jelszó ellenőrzés kimenete
 def test_tc3():
     pass
 
