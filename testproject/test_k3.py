@@ -46,40 +46,26 @@ URL = "https://agreeable-beach-0514a6003.azurestaticapps.net/k3"
 driver.get(URL)
 time.sleep(2)
 
-# kiemelés elements
-varos_nev_input = driver.find_element_by_id('allcapsName')
-Ellenőrzés_gomb = driver.find_element_by_id('submit')
-Eredmeny_szoveg =
-Eredmény_lista = driver.find_elements_by_id('randomNames')
-#Eredmény_lista = driver.find_elements_by_xpath('//ul/li(contains[@marker, ')
+def test_find_the_name():
 
-# kiemelés tesztadat
-#test_data = []
-#test_results = []
+    # Helyes nevek listába gyűjtése --- kóddal
+    g_list = driver.find_element_by_id("names").text
+    good_list = g_list.replace('"', "").split(", ")
 
-def clear_and_fill_input(element, text):
-    pass
-    # element.clear()
-    # element.send_keys(text)
+    # Kakukktojást tartalmazó lista előállítása
+    w_list = driver.find_elements_by_xpath('//*[@id="randomNames"]/li')
+    wrong_list = []
+    for element in w_list:
+        wrong_list.append(element.text)
 
-# TC1-helyes kitöltés
-#def test_proper_card_deck():
-def test_tc1():
-    pass
+    # Ellenőrizzük, hogy a jó nevek, benne vannak-e a hibás listában. Az az elem ami csupa nagybetű az else ágra fog futni.
+    for name in good_list:
+        if name in wrong_list:
+            continue
+        else:
+            print(name)
+            driver.find_element_by_id("allcapsName").send_keys(name)
+            driver.find_element_by_id("submit").click()
+            assert driver.find_element_by_id("result").text == "Eltaláltad."
 
-# TC2-helytelen kitöltés
-#def test_initial_submit_enabled():
-def test_tc2():
-    driver.get(URL)     # weblap alaphelyzetet eredményez
-    pass
-
-# TC3-helytelen kitöltés
-#def test_initial_card_list_empty():
-def test_tc3():
-    pass
-
-test_tc1()
-test_tc2()
-test_tc3()
-
-#driver.quit()
+test_find_the_name()
