@@ -1,11 +1,8 @@
 # ## 1 Feladat: Haromszög kerülete
 #
 # Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ.
-#
 # A program töltse be a Háromszög kerülete app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k1](https://agreeable-beach-0514a6003.azurestaticapps.net/k1) oldalról.
-#
 # Feladatod, hogy automatizáld selenium webdriverrel az alábbi funkcionalitásokat a Háromszög kerülete appban:
-#
 # Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 #
 # * Helyesen jelenik meg az applikáció betöltéskor:

@@ -1,15 +1,10 @@
 # ## 3 Feladat: Nagybetűs város
 #
 # Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ.
-#
 # A program töltse be a Nagybetűs város appot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k3](https://agreeable-beach-0514a6003.azurestaticapps.net/k3) oldalról.
-#
 # Feladatod, hogy automatizáld selenium webdriverrel a Nagybetűs város app tesztelését.
-#
 # Az applikáció minden frissítésnél véletlenszerűen változik!
-#
 # Feladatod, hogy megtaláld azt a városnevet, ami **csupa nagyvetűvel** van írva és kitöltsd a form-ban a mezőt és ellnörizd le, hogy eltaláltad-e.
-#
 # Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 #
 # Az alábbi teszteseteket mindenkép fedd le:

@@ -1,15 +1,10 @@
 # ## 2 Feladat: Matek app
 #
 # Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ.
-#
 # A program töltse be a Matek app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k2](https://agreeable-beach-0514a6003.azurestaticapps.net/k2) oldalról.
-#
 # Feladatod, hogy automatizáld selenium webdriverrel a Matek app tesztelését. Az applikáció minden frissítésnél véletlenszerűen változik!
-#
 # Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
-#
 # Az alábbi teszteseteket kell lefedned:
-#
 # A feladatod, hogy a random számokkal működő matematikai applikációt ellenőrizd. A teszted ki kell, hogy olvassa a három operandust (számot) és a két operátort (műveleti jelet). Ennek megfelelően kell elvégezned a kalkulációt Pythonban.
 #
 # * Teszteld le, hogy helyesen jelenik-e meg az applikáció:
@@ -20,7 +15,6 @@
 # * Ellenőrizd, hogy jól működik-e a kalkulátor?
 #
 # * Ellenőrizd, hogy akárhányszor megnyomható-e a kalkuláció gomb análékül, hogy ez elrontana bármit is.
-#
 #
 # ### A megoldás beadása
 # * a megoldásokat a `testproject` mappába tedd, `k2.py`

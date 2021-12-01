@@ -1,11 +1,8 @@
 # ## 4 Feladat: Password validation
 #
 # Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ.
-#
 # A program töltse be a Password validation app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k4](https://agreeable-beach-0514a6003.azurestaticapps.net/k4) oldalról.
-#
 # Feladatod, hogy automatizáld selenium webdriverrel a Password validation app tesztelését.
-#
 # Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 #
 # Az alábbi teszt eseteket kell kidolgozzad:
@@ -24,7 +21,6 @@
 #     * username: kisstamas
 #     * password: !
 #     * Minden kategóriában negatív a jelszó ellenőrzés kimenete
-#
 #
 # ### A megoldás beadása
 # * a megoldásokat a `testproject` mappába tedd, `k4.py`

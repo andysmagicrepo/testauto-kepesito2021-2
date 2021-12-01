@@ -3,9 +3,7 @@
 # Készíts egy Python python applikációt (egy darab python file) ami selenium-ot használ.
 #
 # A program töltse be a Large Tic Tac Toe app-ot az [https://agreeable-beach-0514a6003.azurestaticapps.net/k5](https://agreeable-beach-0514a6003.azurestaticapps.net/k5) oldalról.
-#
 # Feladatod, hogy automatizáld selenium webdriverrel a Large Tic Tac Toe app tesztelését.
-#
 # Az ellenőrzésekhez használj `pytest` keretrendszert. A tesztjeidben használj `assert` összehasonlításokat használj!
 #
 # A feladatod az alábbi tesztesetek lefejlesztése:
@@ -20,7 +18,6 @@
 # * Győztes
 #     * Ellenőrizzük az "öt ugyanolyan győz" szabályt vizszintesen
 #     * Ellenőrizzük az "öt ugyanolyan győz" szabályt függőlegesen
-#
 #
 # ### A megoldás beadása
 # * a megoldásokat a `testproject` mappába tedd, `k5.py`
