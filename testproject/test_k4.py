@@ -81,13 +81,13 @@ def email_and_click(input_data):
 
 # TC1 - Helyes kitöltés
 def test_TC01():
-    email_and_click(test_data[0])
+    email_and_click(test_data_UN[0])
     error_1 = driver.find_elements_by_class_name("validation-error")
     assert len(error_1) == 0
 
 # TC2 - Helytelen kitöltés
 def test_TC02():
-    email_and_click(test_data[1])
+    email_and_click(test_data_UN[1])
     error_2 = driver.find_element_by_class_name("validation-error").text
     assert error_2 == expected_error_message[1]
 
@@ -96,7 +96,6 @@ def test_TC03():
     email_and_click(test_data[2])
     error_3 = driver.find_element_by_class_name("validation-error").text
     assert error_3 == expected_error_message[2]
-    time.sleep(1)
 
 test_TC01():
 test_TC02():

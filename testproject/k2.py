@@ -66,30 +66,30 @@ def calculator():
 #* Egy matematikai képletet látsz aminek a jobb oldalán egy kérdőjellel jelöltül a keresett eredményt, pl 3866-5434*160 = ?
 #     * A kalkuláció gomb megtalálható és megnyomható.
 #     * A megoldás üres kezdetben: Eredmény: <üres érték>
-def test_tc1():
+def tc1():
     # kezdeti ellenorzes
     assert alk_eredmeny == ""
     assert (kalkulacio_gomb.isDisplayed() and kalkulacio_gomb.isEnabled) == true
 
 # TC2-helytelen kitöltés
 # Ellenőrizd, hogy jól működik-e a kalkulátor?
-def test_tc2():
+def tc2():
     kalkulacio_gomb.click()
     calculator()
     pass
 
 # TC3-helytelen kitöltés
 # * Ellenőrizd, hogy akárhányszor megnyomható-e a kalkuláció gomb análékül, hogy ez elrontana bármit is.
-def test_tc3():
+def tc3():
     for i in range(100):
         kalkulacio_gomb.click()
         calculator()
         time.sleep(1)
 
-test_tc1()
-test_tc2()
-test_tc3()
-# tc1()
-# tc2()
-# tc3()
+# test_tc1()
+# test_tc2()
+# test_tc3()
+tc1()
+tc2()
+tc3()
 #driver.quit()
