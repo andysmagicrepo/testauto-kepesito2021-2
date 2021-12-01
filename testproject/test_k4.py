@@ -53,7 +53,7 @@ time.sleep(2)
 # kiemelés elements
 usrname = driver.find_element_by_id('usrname')
 pswd = driver.find_element_by_id('psw')
-submit = driver.find_element_by_xpath(//input[@type='submit'])
+submit = driver.find_element_by_xpath("//input[@type='submit']")
 
 # kiemelés tesztadat
 #test_data = []

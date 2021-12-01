@@ -40,47 +40,59 @@ import csv
 opt = Options()
 opt.headless = False
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-driver.set_window_rect(1200, 400, 1300, 1000)
+driver = webdriver.Chrome(ChromeDriverManager().install())
+# driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
+# driver.set_window_rect(1200, 400, 1300, 1000)
 URL = "https://agreeable-beach-0514a6003.azurestaticapps.net/k5"
 
 driver.get(URL)
 time.sleep(2)
 
 # kiemelés elements
-cella_lista = driver.find_elements_by_class_name('title')
+start_button = driver.find_element_by_xpath("/html/body/div[1]/button")
+table_fields = driver.find_elements_by_tag_name("tile")
 
 
 # kiemelés tesztadat
 #test_data = []
 #test_results = []
 
-def clear_and_fill_input(element, text):
-    pass
-    # element.clear()
-    # element.send_keys(text)
 
 # TC1-helyes kitöltés
 # * Az applikáció helyesen megjelenik:
 #     * A Tic Tac Toe tabla 12 x 12 meretu (144 cellat tartalmaz)
 #     * Minden cell ?-et tartalmaz
 def test_tc1():
-    cella_hossz = len(cella_lista)
-    assert cella_hossz == 144
+#def tc01():
+    cella_hossz = len(table_fields)
+    assert len(table_fields) == 144
     a = 0
-    for b in cella_hossz:
-        if cella_lista[b] =='?':
+    for b in len(table_fields):
+        if table_fields[b] =='?':
             a += 1
     assert a == 144
-
-
 
 # TC2-helytelen kitöltés
 # * Alap játékszabályok ellenőrzése:
 #     * Az első játékos (első gombnyomás) megnyom egy cellát, ami ezután X karaktert kell, hogy tartalmazzon
 #     * A második játékos (második gombnyomás) megnyom egy cellát, ami ezután 0 karaktert kell, hogy tartalmazzon
 def test_tc2():
-    driver.get(URL)     # weblap alaphelyzetet eredményez
+#def tc02():
+    #driver.get(URL)     # weblap alaphelyzetet eredményez
+    # elso jatekos gombnyomasa
+    start_button.click()
+    table_fields = driver.find_elements_by_tag_name("tile")
+    i = 0
+    while i < 145 and table_fields[i] != "X":
+        i += 1
+    assert not i == 144
+
+    # masodik jatekos gombnyomasa
+    table_fields = driver.find_elements_by_tag_name("tile")
+    i = 0
+    while i < 145 and table_fields[i] != "O":
+        i += 1
+    assert not i == 144
     pass
 
 # TC3-helytelen kitöltés
@@ -89,6 +101,13 @@ def test_tc2():
 #     * Ellenőrizzük az "öt ugyanolyan győz" szabályt függőlegesen
 def test_tc3():
     pass
+# def tc3():
+#     pass
+
+
+    # tc01()
+    # tc02()
+    # tc03()
 
 test_tc1()
 test_tc2()
