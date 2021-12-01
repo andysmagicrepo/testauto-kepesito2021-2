@@ -50,47 +50,54 @@ URL = "https://agreeable-beach-0514a6003.azurestaticapps.net/k4"
 driver.get(URL)
 time.sleep(2)
 
-# kiemelés elements
-usrname = driver.find_element_by_id('usrname')
-pswd = driver.find_element_by_id('psw')
-submit = driver.find_element_by_xpath("//input[@type='submit']")
 
-# kiemelés tesztadat
-#test_data = []
-#test_results = []
+driver.get("https://agreeable-beach-0514a6003.azurestaticapps.net/k4")
+    time.sleep(1)
 
-def clear_and_fill_input(element, text):
-    pass
-    # element.clear()
-    # element.send_keys(text)
 
-# TC1-helyes kitöltés
-# * Helyesen jelenik meg az applikáció:
-#     * Megjelennek a username illetve password mezők, de üres a tartalmuk
-#     * Van submit gomb
-#     * Nincs hiba a képernyőn
-def test_tc1():
-    pass
+# Kitöltendő mező és klikkelendő gomb
+user_name = driver.find_element_by_id("usrname")
+password = driver.find_element_by_id("psw")
+submit_button = driver.find_element_by_xpath("/html/body/div[1]/form/input[3]")
 
-# TC2-helytelen kitöltés
-# * Helyes kitöltés - nincs hiba:
-#     * username: kisstamas
-#     * password: Abcd123!
-#     * Minden kategóriában pozitív a jelszó ellenőrzés kimenete
-def test_tc2():
-    driver.get(URL)     # weblap alaphelyzetet eredményez
-    pass
+# üres tartalom ell
+assert user_name.isDisplayed
+assert password.isDisplayed
+assert user_name == ""
+assert password == ""
 
-# TC3-helytelen kitöltés
-# * Helytelen kitöltés - 4 hiba
-#     * username: kisstamas
-#     * password: !
-#     * Minden kategóriában negatív a jelszó ellenőrzés kimenete
-def test_tc3():
-    pass
+test_data_UN = ["kisstamas", "kisstamas"]
+test_data_Pw = ["Abcd123!", "!"]
+expected_error_message = [""]
 
-test_tc1()
-test_tc2()
-test_tc3()
 
-#driver.quit()
+def email_and_click(input_data):
+    """beviteli mező törlése és új adatbevitel"""
+    user_name.clear()
+    user_name.send_keys(input_data)
+    submit_button.click()
+    time.sleep(1)
+
+
+# TC1 - Helyes kitöltés
+def test_TC01():
+    email_and_click(test_data[0])
+    error_1 = driver.find_elements_by_class_name("validation-error")
+    assert len(error_1) == 0
+
+# TC2 - Helytelen kitöltés
+def test_TC02():
+    email_and_click(test_data[1])
+    error_2 = driver.find_element_by_class_name("validation-error").text
+    assert error_2 == expected_error_message[1]
+
+# TC3 - üres kitöltés
+def test_TC03():
+    email_and_click(test_data[2])
+    error_3 = driver.find_element_by_class_name("validation-error").text
+    assert error_3 == expected_error_message[2]
+    time.sleep(1)
+
+test_TC01():
+test_TC02():
+test_TC03():
